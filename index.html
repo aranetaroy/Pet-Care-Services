@@ -1,0 +1,359 @@
+<!DOCTYPE html>
+    <html lang="en">
+    <head>
+       <meta charset="UTF-8">
+       <meta name="viewport" content="width=device-width, initial-scale=1.0">
+ 
+       <link href="https://cdn.jsdelivr.net/npm/remixicon@3.2.0/fonts/remixicon.css" rel="stylesheet">
+
+       <link rel="stylesheet" href="assets/css/style.css">
+
+       <style>
+         body {
+           background-image: url('assets/imgs/image.png');
+           background-size: cover;
+           background-position: center;
+           background-repeat: no-repeat;
+           min-height: 90vh;
+           margin: 0;
+           padding: 0;
+           color: var(--white-color);
+         }
+
+         #about {
+            background-color: #1d1d1d;
+            background-image: url('assets/imgs/about.png'); /* Change the image */
+            background-size: cover;
+            background-position: center;
+            padding: 100px 20px;
+            color: var(--white-color);
+         }
+       </style>
+
+       <title>Pet Care Services</title>
+    </head>
+    <body>
+      <script>
+        const navToggle = document.getElementById("nav-toggle");
+        const navMenu = document.querySelector(".nav__menu");
+      
+        navToggle.addEventListener("click", () => {
+          navMenu.classList.toggle("show-menu");
+        });
+      </script>
+
+       <!-- HEADER -->
+       <header class="header">
+         <nav class="nav container">
+           <div class="nav__data">
+             <!-- Logo on the left -->
+             <a href="#" class="nav__logo">
+               <img src="assets/imgs/logo.png" alt="Pet Care Logo" class="nav__logo-img" height="50">
+               <span class="nav__logo-text">Pet Care</span>
+             </a>
+       
+             <!-- Links on the right -->
+             <div class="nav__menu" id="nav-menu">
+               <ul class="nav__list">
+                 <li><a href="#top-hero" class="nav__link" onclick="showSection('home')">Home</a></li>
+                 <li><a href="#about" class="nav__link" onclick="showSection('about')">About us</a></li>
+                 <li><a href="#feedback" class="nav__link" onclick="showSection('feedback')">Feedback</a></li>
+
+               </ul>
+             </div>
+       
+             <!-- Mobile toggle -->
+             <div class="nav__toggle" id="nav-toggle">
+               <i class="ri-menu-line nav__burger"></i>
+               <i class="ri-close-line nav__close"></i>
+             </div>
+           </div>
+         </nav>
+       </header>
+      <!-- Hero Button Section -->
+         <section class="hero" id="top-hero">
+            <div class="hero-box">
+            <h1 class="hero__title">Welcome to Pet Care</h1>
+            <p class="hero__subtitle">Your one-stop solution for all your pet's needs. Whether you have a playful puppy, a curious kitten, or any other beloved companion, we're here to make sure they receive the best care possible.</p>
+            <a href="#hero-sections" class="hero__button">Get Started</a>
+            </div>
+         </section>
+
+         <br>
+         <br>
+         <br>
+         <br>
+         <br>
+
+         <!-- Hero Sections Container -->
+         <section class="hero-container" id="hero-sections">
+            <div class="hero-box">
+            <h2>Grooming</h2>
+            <p>Professional grooming services for all pets.</p>
+            <button class="hero-box-button" onclick="openModal('modal1')">Book Now</button>
+            </div>
+            <div class="hero-box">
+            <h2>Veterinary</h2>
+            <p>Comprehensive healthcare for your animals.</p>
+            <button class="hero-box-button" onclick="openModal('modal2')">Book Now</button>
+            </div>
+            <div class="hero-box">
+            <h2>Training</h2>
+            <p>Expert training to help your pets thrive.</p>
+            <button class="hero-box-button" onclick="openModal('modal3')">Book Now</button>
+            </div>
+         </section>
+         
+         <!-- MODAL 1 - Grooming -->
+<div id="modal1" class="modal">
+   <div class="modal-content">
+     <span class="modal-close" onclick="closeModal('modal1')">&times;</span>
+     <h3>Book Grooming</h3>
+     <form>
+       <label for="grooming-name">Your Name</label>
+       <input type="text" id="grooming-name" name="name" placeholder="Enter your name" required>
+ 
+       <label for="train-name">Your Pet's Name</label>
+       <input type="text" id="train-name" name="name" placeholder="Enter your pet's name" required>
+
+       <label for="grooming-pet">Pet Type</label>
+       <input type="text" id="grooming-pet" name="pet" placeholder="e.g., Dog, Cat" required>
+
+       <label for="train-name">Pet's Behaviour</label>
+       <input type="text" id="grooming-behaviour" name="behaviour" placeholder="Enter your pet's behaviour" required>
+
+ 
+       <label for="grooming-date">Preferred Date</label>
+       <input type="date" id="grooming-date" name="date" required>
+ 
+       <label for="grooming-notes">Additional Notes</label>
+       <textarea id="grooming-notes" name="notes" rows="3" placeholder="Any specific instructions?"></textarea>
+ 
+       <button type="submit">Submit Booking</button>
+     </form>
+   </div>
+ </div>
+ 
+ <!-- MODAL 2 - Veterinary -->
+ <div id="modal2" class="modal">
+   <div class="modal-content">
+     <span class="modal-close" onclick="closeModal('modal2')">&times;</span>
+     <h3>Book Veterinary Service</h3>
+     <form>
+       <label for="vet-name">Your Name</label>
+       <input type="text" id="vet-name" name="name" placeholder="Enter your name" required>
+ 
+       <label for="vet-pet-name">Pet's Name</label>
+       <input type="text" id="vet-pet-name" name="petName" placeholder="Enter your pet's name" required>
+
+       <label for="grooming-pet">Pet Type</label>
+       <input type="text" id="vet-pet-type" name="pet" placeholder="e.g., Dog, Cat" required>
+
+ 
+       <label for="vet-issue">Health Concern</label>
+       <input type="text" id="vet-issue" name="issue" placeholder="e.g., Vaccination, Injury" required>
+ 
+       <label for="vet-date">Preferred Date</label>
+       <input type="date" id="vet-date" name="date" required>
+ 
+       <button type="submit">Submit Booking</button>
+     </form>
+   </div>
+ </div>
+ 
+ <!-- MODAL 3 - Training -->
+ <div id="modal3" class="modal">
+   <div class="modal-content">
+     <span class="modal-close" onclick="closeModal('modal3')">&times;</span>
+     <h3>Book Training</h3>
+     <form>
+       <label for="train-name">Your Name</label>
+       <input type="text" id="train-name" name="name" placeholder="Enter your name" required>
+
+       <label for="train-pet-name">Pet's Name</label>
+       <input type="text" id="train-pet-name" name="petName" placeholder="Enter your pet's name" required>
+
+       <label for="grooming-pet">Pet Type</label>
+       <input type="text" id="training-pet-type" name="pet" placeholder="e.g., Dog, Cat" required>
+
+ 
+       <label for="train-level">Training Level</label>
+       <select id="train-level" name="level" required>
+         <option value="" disabled selected>Select level of Training</option>
+         <option>Beginner</option>
+         <option>Intermediate</option>
+         <option>Advanced</option>
+       </select>
+ 
+       <label for="train-date">Preferred Date</label>
+       <input type="date" id="train-date" name="date" required>
+ 
+       <button type="submit">Submit Booking</button>
+     </form>
+   </div>
+ </div>
+ 
+ <script>
+   function openModal(id) {
+     document.getElementById(id).style.display = 'block';
+   }
+
+   function closeModal(id) {
+     document.getElementById(id).style.display = 'none';
+   }
+
+   window.onclick = function(event) {
+     const modals = document.querySelectorAll('.modal');
+     modals.forEach(modal => {
+       if (event.target == modal) {
+         modal.style.display = "none";
+       }
+     });
+   }
+ </script>
+         
+         <!-- About Us Section -->
+<section id="about" class="content-section about-section" style="padding: 100px 20px; background-color: #0e0d0d;">
+   <div class="about-container">
+   <h2>About Us</h2><br>
+   <p>At Pet Care Services, we are dedicated to providing exceptional care for your beloved pets. Our mission is to ensure every animal receives the love, attention, and professional service they deserve. With a team of certified groomers, trainers, and veterinarians, we offer a full range of services tailored to your pet’s needs. From basic grooming to advanced medical treatments, we are a one-stop solution for pet wellness. We believe that pets are family, and we treat them with the same compassion and respect. Our facility is equipped with modern tools and a comfortable environment designed to reduce stress for both pets and their owners. We are committed to transparency, communication, and trust in every interaction. Whether it’s a quick nail trim or a full health check-up, your pet’s safety and happiness are our top priorities. We also provide personalized care plans to help your pet thrive at every life stage. Join our growing family of pet lovers and experience the Pet Care difference today.</p>
+   </div>
+</section>
+ 
+ <script>
+   function showSection(sectionId) {
+     const sections = document.querySelectorAll('.content-section');
+     sections.forEach(section => {
+       section.style.display = (section.id === sectionId) ? 'block' : 'none';
+     });
+   }
+ </script>
+
+<section id="feedback" class="content-section feedback-section" style="background-image: url('assets/imgs/feed.png'); background-size: cover; background-position: center; color: white; padding: 100px 20px;">
+   <div class="feedback-container">
+     <h2 style="text-align: center;">Customer Feedback</h2><br>
+ 
+     <div class="carousel">
+       <div class="feedback-card active">
+         <h3>Jane D.</h3>
+         <p>"The grooming service was fantastic! My dog looks amazing and was so relaxed."</p>
+       </div>
+ 
+       <div class="feedback-card">
+         <h3>Michael T.</h3>
+         <p>"Really impressed with the veterinary team—quick diagnosis and gentle care."</p>
+       </div>
+ 
+       <div class="feedback-card">
+         <h3>Samantha R.</h3>
+         <p>"The training program worked wonders on my energetic puppy. Highly recommend!"</p>
+       </div>
+     </div>
+ 
+     <div style="text-align: center; margin-top: 20px;">
+       <button onclick="prevSlide()">&#10094; Prev</button>
+       <button onclick="nextSlide()">Next &#10095;</button>
+     </div>
+   </div>
+ </section>
+ 
+ <style>
+   .feedback-card {
+     display: none;
+     background: rgba(0, 0, 0, 0.7);
+     padding: 20px;
+     border-radius: 10px;
+     text-align: center;
+     transition: opacity 0.5s ease;
+   }
+ 
+   .feedback-card.active {
+     display: block;
+   }
+ 
+   button {
+     background-color: #444;
+     border: none;
+     padding: 10px 20px;
+     margin: 0 10px;
+     color: white;
+     border-radius: 5px;
+     cursor: pointer;
+   }
+ 
+   button:hover {
+     background-color: #666;
+   }
+ </style>
+ 
+ <script>
+   let currentSlide = 0;
+   const cards = document.querySelectorAll('.feedback-card');
+ 
+   function showSlide(index) {
+     cards.forEach(card => card.classList.remove('active'));
+     cards[index].classList.add('active');
+   }
+ 
+   function nextSlide() {
+     currentSlide = (currentSlide + 1) % cards.length;
+     showSlide(currentSlide);
+   }
+ 
+   function prevSlide() {
+     currentSlide = (currentSlide - 1 + cards.length) % cards.length;
+     showSlide(currentSlide);
+   }
+ 
+   // Initialize
+   showSlide(currentSlide);
+ </script>
+ 
+ <!-- Footer Section -->
+<footer class="footer">
+   <div class="footer-container">
+     <div class="footer-logo">
+       <a href="#" class="footer-logo-link">
+         <img src="assets/imgs/logo.png" alt="Pet Care Logo" class="footer-logo-img" height="50">
+         <span>Pet Care</span>
+       </a>
+     </div>
+ 
+     <div class="footer-contact">
+       <h3>Contact Us</h3>
+       <p><strong>Email:</strong> petcareservices@gmail.com</p>
+       <p><strong>Phone:</strong> +123-456-7890</p>
+       <p><strong>Address:</strong> RX3H+V7V, Rizal St, Silay City, Negros Occidental</p>
+     </div>
+   </div>
+ </footer>
+
+ <script>
+  const toggleBtn = document.getElementById("nav-toggle");
+  const navMenu = document.getElementById("nav-menu");
+  const burgerIcon = toggleBtn.querySelector(".ri-menu-line");
+  const closeIcon = toggleBtn.querySelector(".ri-close-line");
+
+  toggleBtn.addEventListener("click", () => {
+    navMenu.classList.toggle("show");
+  });
+
+  openBtn.addEventListener("click", () => {
+    modal.classList.add("show");
+    document.body.style.overflow = "hidden"; // prevent background scroll
+  });
+
+  closeBtn.addEventListener("click", () => {
+    modal.classList.remove("show");
+    document.body.style.overflow = ""; // restore scroll
+  });
+
+  // Close modal when clicking outside the content
+  window.addEventListener("click", (e) => {
+    if (e.target === modal) {
+      modal.classList.remove("show");
+      document.body.style.overflow = "";
+    }
+  });
+</script>
+ </body>       
