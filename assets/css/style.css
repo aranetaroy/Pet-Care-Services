@@ -592,4 +592,67 @@ body {
   font-weight: bold;
 }
 
+/*mobile*/
+/* Navigation styling for mobile */
+.nav__menu {
+  display: none;
+  flex-direction: column;
+  background-color: #1d1d1d;
+  position: absolute;
+  top: 70px;
+  right: 20px;
+  width: 200px;
+  border-radius: 8px;
+  z-index: 1000;
+}
+
+.nav__menu.show-menu {
+  display: flex;
+}
+
+.nav__toggle {
+  display: block;
+  cursor: pointer;
+}
+
+/* Hide toggle on desktop */
+@media (min-width: 768px) {
+  .nav__toggle {
+    display: none;
+  }
+
+  .nav__menu {
+    display: flex !important;
+    position: static;
+    flex-direction: row;
+    background: none;
+    width: auto;
+  }
+}
+
+/* Hero and service boxes responsive */
+.hero-container {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  padding: 20px;
+}
+
+@media (min-width: 768px) {
+  .hero-container {
+    flex-direction: row;
+    justify-content: space-around;
+  }
+}
+
+/* Modal mobile styles */
+.modal-content {
+  max-width: 90%;
+  margin: auto;
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+}
+
+
 }  

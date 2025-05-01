@@ -34,11 +34,22 @@
     </head>
     <body>
       <script>
-        const navToggle = document.getElementById("nav-toggle");
-        const navMenu = document.querySelector(".nav__menu");
+        const toggleBtn = document.getElementById("nav-toggle");
+        const navMenu = document.getElementById("nav-menu");
       
-        navToggle.addEventListener("click", () => {
+        toggleBtn.addEventListener("click", () => {
           navMenu.classList.toggle("show-menu");
+        });
+      
+        // Modal dismiss when clicking outside
+        window.addEventListener("click", (e) => {
+          const modals = document.querySelectorAll('.modal');
+          modals.forEach(modal => {
+            if (e.target === modal) {
+              modal.style.display = 'none';
+              document.body.style.overflow = '';
+            }
+          });
         });
       </script>
 
@@ -102,6 +113,7 @@
             <p>Expert training to help your pets thrive.</p>
             <button class="hero-box-button" onclick="openModal('modal3')">Book Now</button>
             </div>
+          </div>
          </section>
          
          <!-- MODAL 1 - Grooming -->
